@@ -27,6 +27,7 @@ public class NewFeatures extends Initialization {
     public void checkIfPostFunctionsDisplayed(){
         glassDocumentationPage.goToProjectConfigDoc("/projects/PROJ?selectedItem=com.codecanvas.glass:glass", "Task");
         pJDoc.expandWorkFlowTransitionByName("Create");
+        pJDoc.openPostFunctionDetails();
 
     }
 

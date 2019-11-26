@@ -36,7 +36,9 @@ public class ProjectConfigurationDocumentationPage extends BasePage {
         driver.findElement(By.xpath("//*[@class='transition-row' ]//b[contains(text(), '" + transName + "')]"));
     }
 
-
+    public void openPostFunctionDetails(){
+        postFunctionButton.click();
+    }
 
 
     public WebElement getTransitionsTitle() {
