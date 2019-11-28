@@ -30,7 +30,7 @@ public class ProjectPage extends BasePage {
     private WebElement projectSettingHeader;
 
 
-    @FindBy(xpath = "//a[@original-title='Private Project 1']")
+    @FindBy(xpath = "//a[@original-title='ProjectINF']")
     private WebElement privateProject1;
 
     @FindBy(id = "view_project_permissions")
