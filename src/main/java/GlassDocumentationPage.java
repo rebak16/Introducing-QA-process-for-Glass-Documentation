@@ -45,6 +45,9 @@ public class GlassDocumentationPage extends BasePage {
     @FindBy(xpath = "//div[@class='aui-page-header-main']//h2")
     private WebElement validateText;
 
+    @FindBy(xpath = "//span[@class='aui-icon aui-icon-small aui-iconfont-configure glass-middle-position']")
+    private WebElement changeButton;
+
 
     @FindBy(xpath = "//a[@class='glass-dropdown']")
     private WebElement issueTypeDropDown;
@@ -68,6 +71,10 @@ public class GlassDocumentationPage extends BasePage {
         issueTypeDropDown.click();
         selectIssueFromDropDown(issueName);
 
+    }
+
+    public WebElement getChangeButton() {
+        return changeButton;
     }
 
     public void permissionMatrix(String permissionType) {
@@ -100,6 +107,7 @@ public class GlassDocumentationPage extends BasePage {
     }
 
     public void goToSchemes() {
+        wait.until((ExpectedConditions.visibilityOf(schemePage)));
         schemePage.click();
     }
 

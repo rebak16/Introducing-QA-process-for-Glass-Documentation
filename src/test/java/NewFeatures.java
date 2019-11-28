@@ -31,4 +31,11 @@ public class NewFeatures extends Initialization {
 
     }
 
+    @Test
+    public void checkChangeButtonIsDisplayed(){
+        glassDocumentationPage.goToVersions("/projects/PROJ?selectedItem=com.codecanvas.glass:glass");
+        glassDocumentationPage.goToSchemes();
+        assertTrue(glassDocumentationPage.getChangeButton().isDisplayed());
+    }
+
 }
