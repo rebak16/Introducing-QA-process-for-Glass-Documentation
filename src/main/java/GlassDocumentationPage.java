@@ -48,6 +48,8 @@ public class GlassDocumentationPage extends BasePage {
     @FindBy(xpath = "//span[@class='aui-icon aui-icon-small aui-iconfont-configure glass-middle-position']")
     private WebElement changeButton;
 
+    @FindBy(xpath ="//*[@class='header']//*[text()='Change']")
+    private WebElement changeText;
 
     @FindBy(xpath = "//a[@class='glass-dropdown']")
     private WebElement issueTypeDropDown;
@@ -71,6 +73,10 @@ public class GlassDocumentationPage extends BasePage {
         issueTypeDropDown.click();
         selectIssueFromDropDown(issueName);
 
+    }
+
+    public void goToProjectPage(String url) {
+        driver.navigate().to(getBaseURL() + url);
     }
 
     public WebElement getChangeButton() {
@@ -136,4 +142,8 @@ public class GlassDocumentationPage extends BasePage {
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
     }
+
+    public WebElement getChangeText() {
+        wait.until(ExpectedConditions.visibilityOf(changeText));
+        return changeText; }
 }
